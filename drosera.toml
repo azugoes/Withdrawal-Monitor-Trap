@@ -1,0 +1,17 @@
+ethereum_rpc = "https://rpc.ankr.com/eth_hoodi/dd8f6a8e0216e53378051312ab418fb49d0db627cba57509c89a2589a90df16b"
+drosera_rpc = "https://relay.hoodi.drosera.io"
+eth_chain_id = 560048
+drosera_address = "0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D"
+
+[traps]
+
+[traps.mytrap]
+path = "out/WithdrawalMonitorTrap.sol/WithdrawalMonitorTrap.json"
+response_contract = "0x... # TODO: Replace with deployed Response.sol address"
+response_function = "pause()"
+cooldown_period_blocks = 20
+min_number_of_operators = 1
+max_number_of_operators = 2
+block_sample_size = 8
+private_trap = true
+whitelist = ["0x2239B82116CfeaC5884076A534A415c9A4f3D296"]
