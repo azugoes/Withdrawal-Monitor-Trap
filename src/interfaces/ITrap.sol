@@ -13,5 +13,5 @@ interface ITrap {
     /// @return A boolean indicating whether to respond and a bytes array for the response call.
     function shouldRespond(
         bytes[] calldata data
-    ) external view returns (bool, bytes memory);
+    ) external pure returns (bool, bytes memory);
 }

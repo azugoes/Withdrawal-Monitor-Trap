@@ -6,7 +6,7 @@ drosera_address = "0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D"
 [traps]
 
 [traps.mytrap]
-path = "out/WithdrawalMonitorTrap.sol/WithdrawalMonitorTrap.json"
+path = "out/SustainedBurstWithdrawalTrap.sol/SustainedBurstWithdrawalTrap.json"
 response_contract = "0x... # TODO: Replace with deployed Response.sol address"
 response_function = "pause()"
 cooldown_period_blocks = 20
