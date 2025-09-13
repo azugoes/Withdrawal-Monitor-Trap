@@ -84,7 +84,7 @@ contract SustainedBurstWithdrawalTrap is ITrap {
         if (totalIncrease >= TOTAL_THRESHOLD && longestStreak >= STREAK_MIN) {
             // You can pass structured payload to the responder (e.g., for logging)
             // (totalIncrease, longestStreak, bigIntervals)
-            return (true, abi.encode(totalIncrease, longestStreak, bigIntervals));
+            return (true, abi.encode(address(MONITORED_BRIDGE), totalIncrease, longestStreak, bigIntervals));
         }
 
         return (false, bytes(""));

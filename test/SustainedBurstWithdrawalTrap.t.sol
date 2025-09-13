@@ -100,8 +100,9 @@ contract SustainedBurstWithdrawalTrapTest is Test {
         (bool should, bytes memory payload) = trap.shouldRespond(data);
         assertTrue(should, "Trap should respond");
 
-        (uint256 totalIncrease, uint256 longestStreak, uint256 bigIntervals) = abi.decode(payload, (uint256, uint256, uint256));
+        (address bridgeAddress, uint256 totalIncrease, uint256 longestStreak, uint256 bigIntervals) = abi.decode(payload, (address, uint256, uint256, uint256));
 
+        assertEq(bridgeAddress, HARDCODED_BRIDGE_ADDRESS);
         assertEq(totalIncrease, per_interval_min * (trap.MIN_SAMPLES() - 1));
         assertEq(longestStreak, trap.MIN_SAMPLES() - 1);
         assertEq(bigIntervals, trap.MIN_SAMPLES() - 1);
